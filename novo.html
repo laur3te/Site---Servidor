@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Site Servidor</title>
+</head>
+<body class="bg-lime-400 ">
+
+    <div class="container bg-purple-400 min-h-[100vh] 
+    mx-auto px-6 py-6">
+        
+        <h1 class="text-white text-3x1 
+        font-semibold">PRODUTOS</h1>
+
+        <div class="text-right my-4">
+            <a href ="index.html" class="bg-lime-500 text-white inline-block 
+            px-4 py-2 rounded hover:bg-white hover:text-black">
+            Voltar </a>
+        </div>
+
+        <form id="formulario">
+            <label for="txtNome">Nome: </label>
+            <input type="text" id="txtNome" name="txtNome" class="block rounded-l w-full p-2 my-2"/>
+
+            <label for="txtPreco">Preço: </label>
+            <input type="text" id="txtPreco" name="txtPreco" class="block rounded-l w-full p-2 my-2"/>
+
+            <input type="submit" value="Salvar" class="bg-lime-500 text-white inline-block 
+            px-4 py-2 rounded my-5 hover:bg-white hover:text-black "/>
+        </form>
+    </div>
+    
+    
+    
+    <script src="novo.js"></script>
+</body>
+</html>
