@@ -17,6 +17,7 @@ function listarProdutos(){
         <table class="table-auto w-full mt-4">
             <tr>
                 <th>ID</th>
+                <th>FOTO</th>   
                 <th>NOME</th>
                 <th>PREÇO</th>
             </tr>
@@ -25,9 +26,10 @@ function listarProdutos(){
     for (let prod of produtos){
         html += `
             <tr>
-                <td class="border">${prod.id}</td>
-                <td class="border">${prod.nome}</td>
-                <td class="border"> RS ${prod.preco}</td>
+                <td class="text-center">${prod.id}</td>
+                <td class="text-center">${prod.nome}</td>
+                <td class="text-center"> RS ${prod.preco}</td>
+                <td class="w-24 text-center"><img src="http://127.0.0.1:3000/${prod.foto}" class="w-20 h-20"></td>
             </tr>
         `
     }
