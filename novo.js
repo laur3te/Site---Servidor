@@ -7,18 +7,26 @@ form.addEventListener("submit", async (ev) => {
     let preco = document.querySelector("#txtPreco").value
     let foto = document.querySelector("#txtFoto").files[0] // Pega a primeira foto da lista 
 
-    let dados = new FormData () // Cria um objeto FormData
+    // Cria um objeto FormData para enviar os dados do formulário
+    let dados = new FormData () 
     dados.append("nome", nome)
     dados.append("preco", preco)
     dados.append("foto", foto)
 
-    await fetch("http://127.0.0.1:3000/produtos", {
-        method: "POST",
-        // headers: {
-            //"Content-Type": "application/json"
-        // },
-        body: dados
-    })
+        let resp = await fetch("http://127.0.0.1:3000/produtos", {
+            method: "POST",
+            // headers: {
+                //"Content-Type": "application/json"
+            // },
+            body: dados 
+        }) 
 
-    alert("Produto cadastrado com sucesso!")
+        if ( resp.status == 200 ) {
+            // Redireciona para a página inicial
+            location.href = "index.html"; 
+            alert("Produto cadastrado com sucesso!")
+
+        } else {
+            alert("Erro ao cadastrar o produto")
+        }
 })
